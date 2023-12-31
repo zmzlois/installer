@@ -10,6 +10,27 @@
 ```
 </div>
 
+## Ansible Playbook to install Daytona
+
+#### Local testing for minimal ansible playbook example, this is not for production usage and Daytona is not supposed to run here
+
+To start a container, run 
+```bash
+docker compose up
+```
+run it in detached mode
+```bash
+docker compose up -d
+```
+To start interactive mode
+```bash
+docker exec -it daytona-ubuntu-ansible bash
+```
+To pause everything running on included in this compose file
+```bash
+
+```
+
 ## Requirements
 
 Before starting the installation script, please go over all the necessary requirements.

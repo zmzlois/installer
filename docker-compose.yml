@@ -1,0 +1,29 @@
+version: "3.8"
+
+
+services:
+  ubuntu:
+    image: ubuntu:22.04
+    container_name: daytona-ubuntu-ansible
+    volumes:
+      - daytona-volume:/var/daytona-volume   # Named volume, harder to access via local host system, revert this back once pushed
+      # - /Users/lois/documents/github/installer/volume: /daytona-volume 
+    tty: true
+    networks:
+      - daytona-network
+    ports:
+      - 8080:80
+
+volumes:
+  daytona-volume:
+
+networks:
+  daytona-network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/16
+          gateway: 172.20.0.1
+
+  
